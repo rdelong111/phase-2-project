@@ -5,5 +5,13 @@
       "firstname": "Ryan",
       "lastname": "DeLong"
     }
+  ],
+  "logininfo": [
+    {
+      "id": 1,
+      "username": "ryandelong",
+      "password": "password",
+      "isLoggedIn": false
+    }
   ]
 }

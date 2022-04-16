@@ -3,15 +3,40 @@
     {
       "id": 1,
       "firstname": "Ryan",
-      "lastname": "DeLong"
-    }
-  ],
-  "logininfo": [
-    {
-      "id": 1,
+      "lastname": "DeLong",
       "username": "ryandelong",
       "password": "password",
-      "isLoggedIn": false
+      "isLoggedIn": false,
+      "isAdmin": true,
+      "picture": "https://i.pinimg.com/474x/47/ba/71/47ba71f457434319819ac4a7cbd9988e.jpg"
+    },
+    {
+      "id": 2,
+      "firstname": "Alexis",
+      "lastname": "DeLong",
+      "username": "alexisdelong",
+      "password": "password",
+      "isLoggedIn": false,
+      "isAdmin": false,
+      "picture": "https://i.pinimg.com/474x/47/ba/71/47ba71f457434319819ac4a7cbd9988e.jpg"
+    }
+  ],
+  "dogs": [
+    {
+      "id": 1,
+      "name": "Phil",
+      "breed": "Chihuahua",
+      "color": "white",
+      "weight": "14lbs",
+      "image": "./dogpics/phil.jpeg"
+    },
+    {
+      "id": 2,
+      "name": "Gus",
+      "breed": "Corgi",
+      "color": "red",
+      "weight": "22lbs",
+      "image": "./dogpics/gus.jpeg"
     }
   ]
 }

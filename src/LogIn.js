@@ -1,21 +1,26 @@
 import React, {useState} from 'react';
 import { Navigate } from 'react-router-dom';
 
-function LogIn({isSignedIn}) {
+function Login({onLogin, isSignedIn = false}) {
   const [formData, setData] = useState({
     username: '',
     password: ''
   });
 
-  console.log(formData)
-
   function handleDataChange(e) {
     setData({...formData, [e.target.name]: e.target.value});
   }
 
+  function handleLoginSubmit(e) {
+    e.preventDefault();
+    onLogin(formData);
+    e.target.reset();
+    setData({username: '', password: ''});
+  }
+
   if (isSignedIn) return <Navigate to='/' />;
   return (
-    <form id='loginform'>
+    <form onSubmit={handleLoginSubmit} id='loginform'>
       <label>
         {'Username: '}
         <input
@@ -30,7 +35,7 @@ function LogIn({isSignedIn}) {
         <input
           onChange={handleDataChange}
           name='password'
-          type='text'
+          type='password'
           placeholder='password...'
         />
       </label><br />
@@ -39,4 +44,4 @@ function LogIn({isSignedIn}) {
   )
 }
 
-export default LogIn;
+export default Login;

@@ -15,17 +15,17 @@ function App() {
 
   function handleLogin(userSub) {
     if (userSub.username === user.username && userSub.password === user.password) {
-      loginlogout(user.id);
+      patchUser({isLoggedIn: !user.isLoggedIn});
     }
   }
 
-  function loginlogout(ID) {
+  function patchUser(data, ID = 1) {
     fetch(`http://localhost:3001/user/${ID}`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({isLoggedIn: !user.isLoggedIn})
+      body: JSON.stringify(data)
     })
       .then((r) => r.json())
       .then((updatedUser) => setUser(updatedUser));
@@ -33,11 +33,11 @@ function App() {
 
   return (
     <div>
-      <NavBar isLoggedIn={user.isLoggedIn} onLogout={() => loginlogout(user.id)} />
+      <NavBar isLoggedIn={user.isLoggedIn} onLogout={() => patchUser({isLoggedIn: !user.isLoggedIn})} />
       <Routes>
         <Route 
           path="/"
-          element={<Home user={user} /> }
+          element={<Home user={user} onUserEdit={(editData) => patchUser(editData)} /> }
         />
         <Route
           path="login"

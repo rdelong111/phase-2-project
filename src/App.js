@@ -3,6 +3,7 @@ import {Route, Routes} from 'react-router-dom';
 import NavBar from './navbars/NavBar';
 import Home from './Home';
 import Login from './Login';
+import Dogs from './Dogs';
 
 function App() {
   const [user, setUser] = useState({});
@@ -36,12 +37,16 @@ function App() {
       <NavBar isLoggedIn={user.isLoggedIn} onLogout={() => patchUser({isLoggedIn: !user.isLoggedIn})} />
       <Routes>
         <Route 
-          path="/"
+          path='/'
           element={<Home user={user} onUserEdit={(editData) => patchUser(editData)} /> }
         />
         <Route
-          path="login"
+          path='login'
           element={<Login onLogin={handleLogin} isSignedIn={user.isLoggedIn} />}
+        />
+        <Route
+          path='dogs'
+          element={<Dogs isSignedIn={user.isLoggedIn} />}
         />
       </Routes>
     </div>

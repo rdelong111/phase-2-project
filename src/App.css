@@ -5,3 +5,25 @@ body {
 #loginform {
   border: 2px solid black;
 }
+
+#dogcontainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.dogcard {
+  border: 1px solid black;
+  text-align: center;
+  flex: 1 1 34%;
+  margin: 5px;
+}
+
+.dogpic {
+  height: auto;
+}
+
+.dogpic img {
+  width: 75%;
+  height: auto;
+}

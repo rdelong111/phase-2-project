@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { Navigate } from 'react-router-dom';
+import {Navigate} from 'react-router-dom';
 
 function Login({onLogin, isSignedIn = false}) {
   const [formData, setData] = useState({
@@ -18,7 +18,7 @@ function Login({onLogin, isSignedIn = false}) {
     setData({username: '', password: ''});
   }
 
-  if (isSignedIn) return <Navigate to='/' />;
+  if (isSignedIn) return <Navigate to='/' replace />
   return (
     <form onSubmit={handleLoginSubmit} id='loginform'>
       <label>

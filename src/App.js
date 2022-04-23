@@ -1,12 +1,14 @@
 import React, {useState, useEffect} from 'react';
-import {Route, Routes} from 'react-router-dom';
+import {Route, Routes, useNavigate} from 'react-router-dom';
 import NavBar from './NavBar';
-import Home from './Home';
+import Home from './homecomponents/Home';
 import Login from './Login';
-import Dogs from './Dogs';
+import Dogs from './dogcomponents/Dogs';
+import NotFound from './NotFound';
 
 function App() {
   const [user, setUser] = useState({});
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetch('http://localhost:3001/user')
@@ -17,6 +19,7 @@ function App() {
   function handleLogin(userSub) {
     if (userSub.username === user.username && userSub.password === user.password) {
       patchUser({isLoggedIn: !user.isLoggedIn});
+      navigate('/');
     }
   }
 
@@ -36,6 +39,7 @@ function App() {
     <div>
       <NavBar isLoggedIn={user.isLoggedIn} onLogout={() => patchUser({isLoggedIn: !user.isLoggedIn})} />
       <Routes>
+        <Route path='*' element={<NotFound />} />
         <Route 
           path='/'
           element={<Home user={user} onUserEdit={(editData) => patchUser(editData)} /> }

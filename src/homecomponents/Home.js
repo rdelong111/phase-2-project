@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {Navigate} from 'react-router-dom';
-import EditFields from './homecomponents/EditFields';
-import EditChoices from './homecomponents/EditChoices';
+import EditFields from './EditFields';
+import EditChoices from './EditChoices';
 
 function Home({user, onUserEdit}) {
   const [edit, changeEdit] = useState('firstname');
@@ -36,7 +36,7 @@ function Home({user, onUserEdit}) {
     changeEditForm({...editForm, [e.target.name]: e.target.value});
   }
 
-  if (!user.isLoggedIn) return <Navigate to='/login' />;
+  if (!user.isLoggedIn) return <Navigate to='/login' replace />;
   return (
     <div>
       <figure>

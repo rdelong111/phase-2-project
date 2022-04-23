@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {Navigate} from 'react-router-dom';
+import {Navigate, Route, Routes, NavLink} from 'react-router-dom';
 import Dog from './Dog';
 
 function Dogs({isSignedIn}) {
@@ -11,14 +11,17 @@ function Dogs({isSignedIn}) {
       .then((theDogs) => changeDogs(theDogs))
   }, []);
 
-  const dogList = dogs.map((dog) => (
-    <Dog key={dog.id} dog={dog} />
+  const dogNav = dogs.map((dog) => (
+    <NavLink key={dog.id} to={dog.name}>{dog.name}</NavLink>
   ));
 
   if (!isSignedIn) return <Navigate to='/login' />;
   return (
     <div id='dogcontainer'>
-      {dogList}
+      {dogNav}
+      <Routes>
+        <Route path=':dogName' element={<Dog dogs={dogs} />} />
+      </Routes>
     </div>
   )
 }

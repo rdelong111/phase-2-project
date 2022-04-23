@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {Route, Routes} from 'react-router-dom';
-import NavBar from './navbars/NavBar';
+import NavBar from './NavBar';
 import Home from './Home';
 import Login from './Login';
 import Dogs from './Dogs';
@@ -45,7 +45,7 @@ function App() {
           element={<Login onLogin={handleLogin} isSignedIn={user.isLoggedIn} />}
         />
         <Route
-          path='dogs'
+          path='dogs/*'
           element={<Dogs isSignedIn={user.isLoggedIn} />}
         />
       </Routes>

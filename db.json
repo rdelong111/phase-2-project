@@ -17,7 +17,7 @@
       "breed": "Chihuahua",
       "color": "white",
       "weight": "14lbs",
-      "image": "./dogpics/phil.jpeg"
+      "image": "../dogpics/phil.jpeg"
     },
     {
       "id": 2,
@@ -25,7 +25,7 @@
       "breed": "Corgi",
       "color": "red",
       "weight": "22lbs",
-      "image": "./dogpics/gus.jpeg"
+      "image": "../dogpics/gus.jpeg"
     }
   ]
 }

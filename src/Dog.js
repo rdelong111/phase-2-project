@@ -1,15 +1,19 @@
 import React from 'react';
+import {useParams} from 'react-router-dom';
 
-function Dog({dog}) {
+function Dog({dogs}) {
+  const params = useParams();
+  const theDog = dogs.filter((dog) => dog.name === params.dogName)[0];
+
   return (
-    <div className='dogcard'>
+    <div key={theDog.id} className='dogcard'>
       <figure className='dogpic'>
-        <img src={dog.image} alt={dog.name} />
-        <figcaption>{dog.name}</figcaption>
+        <img src={theDog.image} alt={theDog.name} />
+        <figcaption>{theDog.name}</figcaption>
       </figure>
-      <p>Breed: {dog.breed}</p>
-      <p>Color: {dog.color}</p>
-      <p>Weight: {dog.weight}</p>
+      <p>Breed: {theDog.breed}</p>
+      <p>Color: {theDog.color}</p>
+      <p>Weight: {theDog.weight}</p>
     </div>
   )
 }

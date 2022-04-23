@@ -36,7 +36,7 @@ function Home({user, onUserEdit}) {
     changeEditForm({...editForm, [e.target.name]: e.target.value});
   }
 
-  if (!user.isLoggedIn) return <Navigate to='/login' replace />;
+  if (!user.isLoggedIn) return <Navigate to='/login' replace />
   return (
     <div>
       <figure>

@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {Navigate, Route, Routes, NavLink} from 'react-router-dom';
+import {Route, Routes, NavLink, Navigate} from 'react-router-dom';
 import DogsHome from './DogsHome';
 import Dog from './Dog';
 
@@ -21,7 +21,7 @@ function Dogs({isSignedIn}) {
     <div id='dogcontainer'>
       {dogNav}
       <Routes>
-        <Route path='/' element={<DogsHome />} />
+        <Route index element={<DogsHome />} />
         <Route path=':dogName' element={<Dog dogs={dogs} />} />
       </Routes>
     </div>

@@ -19,8 +19,13 @@ function App() {
   function handleLogin(userSub) {
     if (userSub.username === user.username && userSub.password === user.password) {
       patchUser({isLoggedIn: !user.isLoggedIn});
-      navigate('/');
+      navigate('/', {replace: true});
     }
+  }
+
+  function handleLogout() {
+    patchUser({isLoggedIn: !user.isLoggedIn});
+    navigate('login', {replace: true});
   }
 
   function patchUser(data, ID = 1) {
@@ -37,7 +42,7 @@ function App() {
 
   return (
     <div>
-      <NavBar isLoggedIn={user.isLoggedIn} onLogout={() => patchUser({isLoggedIn: !user.isLoggedIn})} />
+      <NavBar isLoggedIn={user.isLoggedIn} onLogout={handleLogout} />
       <Routes>
         <Route path='*' element={<NotFound />} />
         <Route 

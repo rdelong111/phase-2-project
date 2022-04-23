@@ -18,7 +18,7 @@ function Login({onLogin, isSignedIn = false}) {
     setData({username: '', password: ''});
   }
 
-  if (isSignedIn) return <Navigate to='/' replace />
+  if (isSignedIn) return <Navigate to='/' replace />;
   return (
     <form onSubmit={handleLoginSubmit} id='loginform'>
       <label>

@@ -4,7 +4,7 @@ import EditFields from './EditFields';
 import EditChoices from './EditChoices';
 import RandomMeme from './/RandomMeme';
 
-function Home({user, onUserEdit}) {
+function Home({user, onUserEdit, onSetProfilePic}) {
   const [edit, changeEdit] = useState('firstname');
   const [showForm, changeShow] = useState(false);
   const [editForm, changeEditForm] = useState({new: '', confirm: ''});
@@ -59,7 +59,7 @@ function Home({user, onUserEdit}) {
           />
         }
       </div>
-      <RandomMeme />
+      <RandomMeme onSetProfilePic={onSetProfilePic} />
     </div>
   )
 }

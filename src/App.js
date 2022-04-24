@@ -47,7 +47,10 @@ function App() {
         <Route path='*' element={<NotFound />} />
         <Route 
           path='/'
-          element={<Home user={user} onUserEdit={(editData) => patchUser(editData)} /> }
+          element={<Home user={user}
+                    onUserEdit={(editData) => patchUser(editData)}
+                    onSetProfilePic={(pic) => patchUser({...user, picture: pic})} />
+                  }
         />
         <Route
           path='login'

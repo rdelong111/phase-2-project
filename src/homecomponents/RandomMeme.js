@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 
-function RandomMeme() {
+function RandomMeme({onSetProfilePic}) {
   const [meme, changeMeme] = useState({
     author: 'internet',
     postLink: 'https://youtu.be/dQw4w9WgXcQ',
@@ -33,6 +33,9 @@ function RandomMeme() {
         <button onClick={handleNewMeme}>Meme</button>
         {' for new meme.'}
       </h2>
+      <p>{'Would you like this image to be your profile picture? '}
+        <button onClick={() => onSetProfilePic(meme.url)}>Set Profile Picture</button>
+      </p>
       <figure>
         <img src={meme.url} alt={meme.title} />
         <figcaption>{meme.title}</figcaption>

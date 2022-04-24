@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {Navigate} from 'react-router-dom';
 import EditFields from './EditFields';
 import EditChoices from './EditChoices';
+import RandomMeme from './/RandomMeme';
 
 function Home({user, onUserEdit}) {
   const [edit, changeEdit] = useState('firstname');
@@ -58,6 +59,7 @@ function Home({user, onUserEdit}) {
           />
         }
       </div>
+      <RandomMeme />
     </div>
   )
 }

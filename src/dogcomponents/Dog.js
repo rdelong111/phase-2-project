@@ -2,8 +2,8 @@ import React from 'react';
 import {useParams} from 'react-router-dom';
 
 function Dog({dogs}) {
-  const params = useParams();
-  const theDog = dogs.filter((dog) => dog.name === params.dogName)[0];
+  const {dogName} = useParams();
+  const theDog = dogs.filter((dog) => dog.name === dogName)[0];
 
   return (
     <div key={theDog.id} className='dogcard'>

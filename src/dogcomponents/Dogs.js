@@ -2,8 +2,9 @@ import React, {useState, useEffect} from 'react';
 import {Route, Routes, NavLink, Navigate} from 'react-router-dom';
 import DogsHome from './DogsHome';
 import Dog from './Dog';
+import RandomDog from './RandomDog';
 
-function Dogs({isSignedIn}) {
+function Dogs({isSignedIn, onSetProfilePic}) {
   const [dogs, changeDogs] = useState([]);
 
   useEffect(() => {
@@ -20,9 +21,11 @@ function Dogs({isSignedIn}) {
   return (
     <div id='dogcontainer'>
       {dogNav}
+      <NavLink to='random'>Random</NavLink>
       <Routes>
         <Route index element={<DogsHome />} />
         <Route path=':dogName' element={<Dog dogs={dogs} />} />
+        <Route path='random' element={<RandomDog onSetProfilePic={onSetProfilePic} />} />
       </Routes>
     </div>
   )

@@ -4,6 +4,7 @@ import NavBar from './NavBar';
 import Home from './homecomponents/Home';
 import Login from './Login';
 import Dogs from './dogcomponents/Dogs';
+import Reminders from './remindercomponents/Reminders';
 import NotFound from './NotFound';
 
 function App() {
@@ -47,7 +48,8 @@ function App() {
         <Route path='*' element={<NotFound />} />
         <Route 
           path='/'
-          element={<Home user={user}
+          element={<Home 
+                    user={user}
                     onUserEdit={(editData) => patchUser(editData)}
                     onSetProfilePic={(pic) => patchUser({...user, picture: pic})} />
                   }
@@ -58,7 +60,16 @@ function App() {
         />
         <Route
           path='dogs/*'
-          element={<Dogs isSignedIn={user.isLoggedIn} />}
+          element={<Dogs 
+                    isSignedIn={user.isLoggedIn}
+                    onSetProfilePic={(pic) => patchUser({...user, picture: pic})} />
+                  }
+        />
+        <Route
+          path='reminders'
+          element={<Reminders
+                    isSignedIn={user.isLoggedIn} />
+                  }
         />
       </Routes>
     </div>

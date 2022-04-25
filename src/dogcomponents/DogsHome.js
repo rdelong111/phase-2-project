@@ -2,7 +2,7 @@ import React from 'react';
 
 function DogsHome() {
   return (
-    <h1>Ryan's Dogs</h1>
+    <h1>Choose from one of my two dogs or a random dog.</h1>
   )
 }
 

@@ -27,5 +27,32 @@
       "weight": "22lbs",
       "image": "../dogpics/gus.jpeg"
     }
+  ],
+  "reminders": [
+    {
+      "id": 1,
+      "message": "Cancel amc+",
+      "priority": 3
+    },
+    {
+      "message": "Test",
+      "priority": 3,
+      "id": 2
+    },
+    {
+      "message": "second test",
+      "priority": 3,
+      "id": 3
+    },
+    {
+      "message": "third test",
+      "priority": 2,
+      "id": 4
+    },
+    {
+      "message": "hello there",
+      "priority": 1,
+      "id": 5
+    }
   ]
 }

@@ -10,6 +10,7 @@ function NavBar({isLoggedIn, onLogout}) {
     <div>
       <NavLink to='/'>Home</NavLink>
       <NavLink to='dogs'>Dogs</NavLink>
+      <NavLink to='reminders'>Reminders</NavLink>
       {isLoggedIn ? logoutbtn : null}
     </div>
   )

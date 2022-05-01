@@ -8,11 +8,17 @@ function Reminders({isSignedIn}) {
   const [rmdrs, changeRmdrs] = useState([]);
   const [form, showForm] = useState(false);
   const [sort, changeSort] = useState('none');
+  const [search, changeSearch] = useState('');
 
   const rList = sortFunction(rmdrs, sort)
-    .map((rmdr) => (
-      <Reminder key={rmdr.id} reminder={rmdr} onRDelete={handleDelete} />
-    ));
+    .map((rmdr) => {
+      if (rmdr.message.toLowerCase().includes(search.toLowerCase())) {
+        return (
+          <Reminder key={rmdr.id} reminder={rmdr} onRDelete={handleDelete} />
+        )
+      }
+      else return null;
+    });
 
   useEffect(() => {
     fetch('http://localhost:3001/reminders')
@@ -75,7 +81,10 @@ function Reminders({isSignedIn}) {
         {form ? 'Cancel Reminder' : 'Add Reminder'}
       </button>
       <h1>Reminders</h1>
-      <ReminderSortFilt onSortChange={(e) => changeSort(e.target.value)} />
+      <ReminderSortFilt
+        onSortChange={(e) => changeSort(e.target.value)}
+        onSearchChange={(e) => changeSearch(e.target.value)}
+      />
       <ul id='reminderlist'>
         {rList}
       </ul>

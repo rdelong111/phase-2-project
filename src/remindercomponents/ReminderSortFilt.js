@@ -1,6 +1,6 @@
 import React from 'react';
 
-function ReminderSortFilt({onSortChange}) {
+function ReminderSortFilt({onSortChange, onSearchChange}) {
   return (
     <div>
       <label>
@@ -11,6 +11,10 @@ function ReminderSortFilt({onSortChange}) {
           <option value='HtoL'>H to L Priority</option>
           <option value='alpha'>Alphabetically</option>
         </select>
+      </label>
+      <label>
+        {' Search Reminder: '}
+        <input onChange={onSearchChange} type='text' placeholder='reminder...'/>
       </label>
     </div>
   )

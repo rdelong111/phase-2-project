@@ -3,14 +3,23 @@ import {NavLink} from 'react-router-dom';
 
 function NavBar({isLoggedIn, onLogout}) {
   const logoutbtn = (
-    <button onClick={onLogout}>Logout</button>
+    <button id='logout' onClick={onLogout}>Logout</button>
   )
 
   return (
     <div>
-      <NavLink to='/'>Home</NavLink>
-      <NavLink to='dogs'>Dogs</NavLink>
-      <NavLink to='reminders'>Reminders</NavLink>
+      <NavLink
+        to='/'
+        className={({isActive}) => (isActive ? 'active': 'inactive')}
+      >Home</NavLink>
+      <NavLink
+        to='dogs'
+        className={({isActive}) => (isActive ? 'active': 'inactive')}
+      >Dogs</NavLink>
+      <NavLink
+        to='reminders'
+        className={({isActive}) => (isActive ? 'active': 'inactive')}
+      >Reminders</NavLink>
       {isLoggedIn ? logoutbtn : null}
     </div>
   )

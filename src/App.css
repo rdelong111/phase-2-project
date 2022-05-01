@@ -2,17 +2,34 @@ body {
   background-color: #808080;
 }
 
+#logout {
+  float: right;
+}
+
 #loginform {
   border: 2px solid black;
 }
 
+.active {
+  background-color: green;
+  font-weight: bold;
+}
+
+.inactive {
+  background-color: red;
+  font-weight: normal;
+}
+
 #dogcontainer {
+  display: flex;
+  align-items: center;
   justify-content: center;
 }
 
 .dogcard {
   border: 1px solid black;
   text-align: center;
+  width: 1000px;
 }
 
 .dogpic {
@@ -20,7 +37,7 @@ body {
 }
 
 .dogpic img {
-  width: 50%;
+  width: 30%;
   height: auto;
 }
 

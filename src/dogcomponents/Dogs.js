@@ -14,20 +14,29 @@ function Dogs({isSignedIn, onSetProfilePic}) {
   }, []);
 
   const dogNav = dogs.map((dog) => (
-    <NavLink key={dog.id} to={dog.name}>{dog.name}</NavLink>
+    <NavLink
+      key={dog.id}
+      to={dog.name}
+      className={({isActive}) => (isActive ? 'active': 'inactive')}
+    >{dog.name}</NavLink>
   ));
 
   if (!isSignedIn) return <Navigate to='/login' replace />;
   return (
-    <div id='dogcontainer'>
+    <>
       {dogNav}
-      <NavLink to='random'>Random</NavLink>
-      <Routes>
-        <Route index element={<DogsHome />} />
-        <Route path=':dogName' element={<Dog dogs={dogs} />} />
-        <Route path='random' element={<RandomDog onSetProfilePic={onSetProfilePic} />} />
-      </Routes>
-    </div>
+      <NavLink
+        to='random'
+        className={({isActive}) => (isActive ? 'active': 'inactive')}
+      >Random</NavLink>
+      <div id='dogcontainer'>
+        <Routes>
+          <Route index element={<DogsHome />} />
+          <Route path=':dogName' element={<Dog dogs={dogs} />} />
+          <Route path='random' element={<RandomDog onSetProfilePic={onSetProfilePic} />} />
+        </Routes>
+      </div>
+    </>
   )
 }
 

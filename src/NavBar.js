@@ -7,7 +7,7 @@ function NavBar({isLoggedIn, onLogout}) {
   )
 
   return (
-    <div>
+    <div className='navsection'>
       <NavLink
         to='/'
         className={({isActive}) => (isActive ? 'active': 'inactive')}

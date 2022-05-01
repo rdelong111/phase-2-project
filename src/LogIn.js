@@ -30,7 +30,7 @@ function Login({onLogin, isSignedIn = false}) {
           placeholder='username...'
         />
       </label>
-      <label><br />
+      <label>
         {'Password: '}
         <input
           onChange={handleDataChange}

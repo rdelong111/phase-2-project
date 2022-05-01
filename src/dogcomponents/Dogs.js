@@ -24,11 +24,13 @@ function Dogs({isSignedIn, onSetProfilePic}) {
   if (!isSignedIn) return <Navigate to='/login' replace />;
   return (
     <>
-      {dogNav}
-      <NavLink
-        to='random'
-        className={({isActive}) => (isActive ? 'active': 'inactive')}
-      >Random</NavLink>
+      <div className='navsection'>
+        {dogNav}
+        <NavLink
+          to='random'
+          className={({isActive}) => (isActive ? 'active': 'inactive')}
+        >Random</NavLink>
+      </div>
       <div id='dogcontainer'>
         <Routes>
           <Route index element={<DogsHome />} />

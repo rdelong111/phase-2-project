@@ -1,3 +1,7 @@
+* {
+  margin: 0;
+}
+
 body {
   background-color: #808080;
 }
@@ -9,7 +13,7 @@ body {
 #loginform  {
   background-color: #ADD8E6;
   text-align: center;
-  border: 1px solid black;
+  border: 1px solid #000000;
   border-radius: 12px;
   margin-top: 20px;
   margin-left: 25%;
@@ -33,7 +37,7 @@ body {
 }
 
 #logout {
-  border: 2px solid black;
+  border: 2px solid #000000;
   border-radius: 12px;
   padding: 5px;
   margin-right: 10px;
@@ -41,10 +45,14 @@ body {
 }
 
 .active, .inactive {
-  border: 2px solid black;
+  border: 2px solid #000000;
   border-radius: 12px;
   padding: 5px;
   margin-right: 10px;
+}
+
+.active:first-child, .inactive:first-child {
+  margin-left: 10px;
 }
 
 .active {
@@ -58,6 +66,7 @@ body {
 }
 
 .navsection {
+  margin-top: 15px;
   height: 40px;
 }
 
@@ -68,7 +77,7 @@ body {
 }
 
 .dogcard {
-  border: 1px solid black;
+  border: 1px solid #000000;
   text-align: center;
   width: 1000px;
 }
@@ -88,5 +97,5 @@ body {
 }
 
 #reminderlist {
-  border: 1px solid black;
+  border: 1px solid #000000;
 }

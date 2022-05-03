@@ -59,6 +59,7 @@ function Home({user, onUserEdit, onSetProfilePic}) {
           />
         }
       </div>
+      <hr />
       <RandomMeme onSetProfilePic={onSetProfilePic} />
     </div>
   )

@@ -29,7 +29,7 @@ function Login({onLogin, isSignedIn = false}) {
           type='text'
           placeholder='username...'
         />
-      </label>
+      </label><br />
       <label>
         {'Password: '}
         <input

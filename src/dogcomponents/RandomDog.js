@@ -16,12 +16,12 @@ function RandomDog({onSetProfilePic}) {
   }
 
   return (
-    <div className='dogcard'>
+    <div id='randomdog' className='container'>
       <p>
         {'Would you like to make this dog your profile picture? '}
         <button onClick={handleSetProfilePic}>Set Profile Picture</button>
       </p>
-      <img id='randomdog' src={dog} alt='random dog' /><br />
+      <img src={dog} alt='random dog' /><br />
       <button onClick={() => fetchDog()}>New Dog</button>
     </div>
   )

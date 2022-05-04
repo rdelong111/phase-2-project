@@ -40,7 +40,7 @@ function Home({user, onUserEdit, onSetProfilePic}) {
   if (!user.isLoggedIn) return <Navigate to='/login' replace />
   return (
     <>
-      <section id='usersec'>
+      <section id='usersec' className='container'>
         <h2>{user.username}</h2>
         <figure>
           <img src={user.picture} alt='ryan' />

@@ -6,10 +6,10 @@ function Dog({dogs}) {
   const theDog = dogs.filter((dog) => dog.name === dogName)[0];
 
   return (
-    <div key={theDog.id} className='dogcard'>
+    <div className='container mydog'>
       <figure className='dogpic'>
         <img src={theDog.image} alt={theDog.name} />
-        <figcaption>{theDog.name}</figcaption>
+        <figcaption> Name: {theDog.name}</figcaption>
       </figure>
       <p>Breed: {theDog.breed}</p>
       <p>Color: {theDog.color}</p>

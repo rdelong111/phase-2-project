@@ -15,13 +15,7 @@ button {
 }
 
 #loginform  {
-  background-color: #ADD8E6;
-  text-align: center;
-  border: 1px solid #000000;
-  border-radius: 12px;
   margin-top: 20px;
-  margin-left: 25%;
-  margin-right: 25%;
 }
 
 #loginform > * {
@@ -38,7 +32,6 @@ button {
 
 #logout {
   border: 2px solid #000000;
-  border-radius: 12px;
   padding: 5px;
   margin-right: 10px;
   cursor: pointer;
@@ -77,14 +70,7 @@ hr {
 }
 
 #usersec {
-  text-align: center;
-  background-color: #ADD8E6;
-  border: 1px solid #000000;
-  border-radius: 12px;
-  margin-left: 25%;
-  margin-right: 25%;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 #usersec h2 {
@@ -97,15 +83,7 @@ hr {
 }
 
 #memesec {
-  text-align: center;
-  background-color: #ADD8E6;
-  border: 1px solid #000000;
-  border-radius: 12px;
-  margin-left: 25%;
-  margin-right: 25%;
   margin-bottom: 50px;
-  padding-top: 20px;
-  padding-bottom: 20px;
 }
 
 #memesec p {
@@ -117,32 +95,47 @@ hr {
   height: auto;
 }
 
-#dogcontainer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.mydog {
+  font-size: 20px;
 }
 
-.dogcard {
-  border: 1px solid #000000;
-  text-align: center;
-  width: 1000px;
-}
-
-.dogpic {
-  height: auto;
+.mydog p {
+  margin: 5px;
 }
 
 .dogpic img {
-  width: 30%;
+  width: 35%;
   height: auto;
 }
 
 #randomdog {
+  margin-bottom: 50px;
+}
+
+#randomdog p {
+  margin-bottom: 10px;
+}
+
+#randomdog button {
+  margin-top: 10px;
+}
+
+#randomdog img {
   width: 45%;
   height: auto;
 }
 
 #reminderlist {
   border: 1px solid #000000;
+}
+
+.container {
+  text-align: center;
+  background-color: #ADD8E6;
+  border: 1px solid #000000;
+  border-radius: 12px;
+  margin-left: 25%;
+  margin-right: 25%;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }

@@ -20,7 +20,7 @@ function Login({onLogin, isSignedIn = false}) {
 
   if (isSignedIn) return <Navigate to='/' replace />;
   return (
-    <form onSubmit={handleLoginSubmit} id='loginform'>
+    <form onSubmit={handleLoginSubmit} id='loginform' className='container'>
       <label>
         {'Username: '}
         <input

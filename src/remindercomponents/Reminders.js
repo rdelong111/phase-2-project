@@ -75,7 +75,7 @@ function Reminders({isSignedIn}) {
 
   if (!isSignedIn) return <Navigate to='/login' replace />;
   return (
-    <section>
+    <section id='reminders'>
       {form ? <ReminderForm onFormSubmit={handleFormSubmit} /> : null}
       <button onClick={() => showForm(!form)}>
         {form ? 'Cancel Reminder' : 'Add Reminder'}

@@ -129,6 +129,20 @@ hr {
   border: 1px solid #000000;
 }
 
+#reminders {
+  margin-top: 25px;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+#reminders h1 {
+  margin-top: 10px;
+}
+
+#reminderlist {
+  margin-top: 10px;
+}
+
 .container {
   text-align: center;
   background-color: #ADD8E6;

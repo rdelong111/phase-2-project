@@ -27,7 +27,7 @@ function RandomMeme({onSetProfilePic}) {
   }
 
   return (
-    <div>
+    <section id='memesec'>
       <h2>
         {'Press '}
         <button onClick={handleNewMeme}>Meme</button>
@@ -47,7 +47,7 @@ function RandomMeme({onSetProfilePic}) {
           <a href={meme.postLink}>LINK</a>
         </p>
       </article>
-    </div>
+    </section>
   )
 }
 

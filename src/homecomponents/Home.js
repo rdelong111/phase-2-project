@@ -39,29 +39,32 @@ function Home({user, onUserEdit, onSetProfilePic}) {
 
   if (!user.isLoggedIn) return <Navigate to='/login' replace />
   return (
-    <div>
-      <figure>
-        <img src={user.picture} alt='ryan' />
-        <figcaption>{user.firstname} {user.lastname}</figcaption>
-      </figure>
-      <div>
-        {showForm ? 
-          <EditFields
-            onEditSubmit={handleEditSubmit}
-            onEditFormChange={handleEditFormChange}
-            onFormShow={handleShowForm}
-            edit={edit}
-          />
-          : 
-          <EditChoices
-            onFormShow={handleShowForm}
-            onChoiceChange={(e) => changeEdit(e.target.value)}
-          />
-        }
-      </div>
+    <>
+      <section id='usersec'>
+        <h2>{user.username}</h2>
+        <figure>
+          <img src={user.picture} alt='ryan' />
+          <figcaption>{user.firstname} {user.lastname}</figcaption>
+        </figure>
+        <div>
+          {showForm ? 
+            <EditFields
+              onEditSubmit={handleEditSubmit}
+              onEditFormChange={handleEditFormChange}
+              onFormShow={handleShowForm}
+              edit={edit}
+            />
+            : 
+            <EditChoices
+              onFormShow={handleShowForm}
+              onChoiceChange={(e) => changeEdit(e.target.value)}
+            />
+          }
+        </div>
+      </section>
       <hr />
       <RandomMeme onSetProfilePic={onSetProfilePic} />
-    </div>
+    </>
   )
 }
 

@@ -6,6 +6,10 @@ body {
   background-color: #808080;
 }
 
+button {
+  border-radius: 12px;
+}
+
 #logout {
   float: right;
 }
@@ -30,10 +34,6 @@ body {
   height: 50px;
   font-size: 20px;
   margin: 20px;
-}
-
-#loginform button {
-  border-radius: 12px;
 }
 
 #logout {
@@ -68,6 +68,53 @@ body {
 .navsection {
   margin-top: 15px;
   height: 40px;
+}
+
+hr {
+  border-color: #000000;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#usersec {
+  text-align: center;
+  background-color: #ADD8E6;
+  border: 1px solid #000000;
+  border-radius: 12px;
+  margin-left: 25%;
+  margin-right: 25%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+#usersec h2 {
+  margin-bottom: 10px;
+}
+
+#usersec figure img {
+  width: 50%;
+  height: auto;
+}
+
+#memesec {
+  text-align: center;
+  background-color: #ADD8E6;
+  border: 1px solid #000000;
+  border-radius: 12px;
+  margin-left: 25%;
+  margin-right: 25%;
+  margin-bottom: 50px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+#memesec p {
+  margin-bottom: 10px;
+}
+
+#memesec figure img {
+  width: 50%;
+  height: auto;
 }
 
 #dogcontainer {

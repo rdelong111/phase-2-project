@@ -45,11 +45,6 @@
       "id": 3
     },
     {
-      "message": "third test",
-      "priority": 2,
-      "id": 4
-    },
-    {
       "message": "hello there",
       "priority": 1,
       "id": 5

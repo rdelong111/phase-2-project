@@ -45,7 +45,7 @@ function Home({user, onUserEdit, onSetProfilePic}) {
         <figure>
           <img src={user.picture} alt='ryan' />
           <figcaption>{user.firstname} {user.lastname}</figcaption>
-        </figure>
+        </figure><br />
         <div>
           {showForm ? 
             <EditFields

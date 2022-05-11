@@ -11,7 +11,7 @@ function EditChoices({onFormShow, onChoiceChange}) {
         <option value='password'>Password</option>
         <option value='picture'>Profile Picture</option>
       </select>
-      <button onClick={onFormShow}>Edit</button>
+      {' '}<button onClick={onFormShow}>Edit</button>
     </label>
   )
 }

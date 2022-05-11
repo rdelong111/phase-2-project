@@ -22,7 +22,7 @@ function EditFields({onEditSubmit, onEditFormChange, onFormShow, edit}) {
             onChange={onEditFormChange}
           />
         </label>
-        <button type='submit'>Submit Change</button>
+        {' '}<button type='submit'>Submit Change</button>
       </form>
       <button onClick={onFormShow}>Cancel Edit</button>
     </>

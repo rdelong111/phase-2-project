@@ -75,7 +75,7 @@ function Reminders({isSignedIn}) {
 
   if (!isSignedIn) return <Navigate to='/login' replace />;
   return (
-    <section id='reminders'>
+    <section id='reminders' className='container'>
       {form ? <ReminderForm onFormSubmit={handleFormSubmit} /> : null}
       <button onClick={() => showForm(!form)}>
         {form ? 'Cancel Reminder' : 'Add Reminder'}
@@ -84,7 +84,7 @@ function Reminders({isSignedIn}) {
       <ReminderSortFilt
         onSortChange={(e) => changeSort(e.target.value)}
         onSearchChange={(e) => changeSearch(e.target.value)}
-      />
+      /><hr />
       <ul id='reminderlist'>
         {rList}
       </ul>

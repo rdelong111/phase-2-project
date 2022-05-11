@@ -22,10 +22,10 @@ function ReminderForm({onFormSubmit}) {
     <form onSubmit={handleFormSubmit}>
       <label>
         {'Reminder: '}
-        <input onChange={handleFormChange} type='text' name='message' placeholder='test' />
+        <input onChange={handleFormChange} type='text' name='message' placeholder='reminder...' />
       </label>
       <label>
-        {'Set Priority: '}
+        {' Set Priority: '}
         <select onChange={handleFormChange} name='priority'>
           <option value='3'>Low</option>
           <option value='2'>Medium</option>

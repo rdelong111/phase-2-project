@@ -1,7 +1,7 @@
 # Phase 2 Project
 
 ## Introduction
-UPDATE
+I discovered that if I think for too long on how to complete the objectives, I will never get anything done. This project that I made, is me reading through the requriements and creating pages based on the idea that first popped in my head.
 
 ### Learning Goals
 - Build a React single page application from scratch
@@ -27,11 +27,14 @@ UPDATE
 1. Once you have met the minimum requirements, feel free to explore! These are only the basic requirements — you're free to add on as much stuff as you'd like. For example, you may want to incorporate data from an external API. Check out [this list of APIs](https://apilist.fun/) if you need some inspiration!
 
 ## REQUIRED Scripts
-
 In the project directory, you must run:
 
+### `npm i`
+Installs all necessary packages needed to succesfully run project.
+
 ### `npm run server`
-Runs a [json-server](https://www.npmjs.com/package/json-server).\
+Runs a [json-server](https://www.npmjs.com/package/json-server).
+
 When the json-server is running, open:\
 [http://localhost:3001/user](http://localhost:3001/user)\
 [http://localhost:3001/dogs](http://localhost:3001/dogs)\
@@ -45,5 +48,11 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
-# Resources
+## Login Credentials
+username: ryandelong\
+password: password
+
+## Resources
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- [Random Dog Api](https://dog.ceo/dog-api/)
+- [Random Meme Api](https://www.reddit.com/r/api/comments/gw7lgx/im_looking_for_a_meme_api/)

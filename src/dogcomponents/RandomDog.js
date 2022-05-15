@@ -1,16 +1,19 @@
 import React, {useState, useEffect} from 'react';
 
 function RandomDog({onSetProfilePic}) {
+  // stores dog in state
   const [dog, changeDog] = useState('https://www.pngitem.com/pimgs/m/495-4957447_dog-spots-on-back-outline-stamp-stick-figure.png');
 
-  useEffect(() => {fetchDog()}, [])
+  useEffect(() => {fetchDog()}, []); // GETs a dog when page loads
 
+  // function that GETs a dog when called
   function fetchDog() {
     fetch('https://dog.ceo/api/breeds/image/random')
       .then((r) => r.json())
       .then((theDog) => changeDog(theDog.message));
   }
 
+  // calls a prop when the profile pic button is clicked
   function handleSetProfilePic() {
     onSetProfilePic(dog);
   }

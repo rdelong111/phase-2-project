@@ -1,7 +1,7 @@
 # Phase 2 Project
 
 ## Introduction
-I discovered that if I think for too long on how to complete the objectives, I will never get anything done. This project that I made, is me reading through the requriements and creating pages based on the idea that first popped in my head.
+I discovered that if I think for too long on how to complete the objectives, I will never get anything done. This project that I made, is me reading through the requirements and creating pages based on the idea that first popped in my head.
 
 ### Learning Goals
 - Build a React single page application from scratch

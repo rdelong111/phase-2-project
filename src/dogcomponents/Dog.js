@@ -2,8 +2,8 @@ import React from 'react';
 import {useParams} from 'react-router-dom';
 
 function Dog({dogs}) {
-  const {dogName} = useParams();
-  const theDog = dogs.filter((dog) => dog.name === dogName)[0];
+  const {dogName} = useParams(); // gets dog name from url
+  const theDog = dogs.filter((dog) => dog.name === dogName)[0]; // gets dog info on matching url name
 
   return (
     <div className='container mydog'>

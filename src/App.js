@@ -8,15 +8,17 @@ import Reminders from './remindercomponents/Reminders';
 import NotFound from './NotFound';
 
 function App() {
-  const [user, setUser] = useState({});
-  const navigate = useNavigate();
+  const [user, setUser] = useState({}); // user data
+  const navigate = useNavigate(); // used for during logout or login
 
+  // GETs the user data
   useEffect(() => {
     fetch('http://localhost:3001/user')
       .then((r) => r.json())
       .then((userData) => setUser(userData[0]));
   }, []);
 
+  // checks if entered login data matches the user data and then navigates to home component
   function handleLogin(userSub) {
     if (userSub.username === user.username && userSub.password === user.password) {
       patchUser({isLoggedIn: !user.isLoggedIn});
@@ -24,11 +26,13 @@ function App() {
     }
   }
 
+  // patches user data login status to false and navigates to login component
   function handleLogout() {
     patchUser({isLoggedIn: !user.isLoggedIn});
     navigate('login', {replace: true});
   }
 
+  // function that PATCHes db.json user
   function patchUser(data, ID = 1) {
     fetch(`http://localhost:3001/user/${ID}`, {
       method: 'PATCH',

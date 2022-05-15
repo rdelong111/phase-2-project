@@ -5,10 +5,11 @@ import EditChoices from './EditChoices';
 import RandomMeme from './/RandomMeme';
 
 function Home({user, onUserEdit, onSetProfilePic}) {
-  const [edit, changeEdit] = useState('firstname');
-  const [showForm, changeShow] = useState(false);
-  const [editForm, changeEditForm] = useState({new: '', confirm: ''});
+  const [edit, changeEdit] = useState('firstname'); // edit field choice is set in state and default to firstname
+  const [showForm, changeShow] = useState(false); // used to show the edit form or not
+  const [editForm, changeEditForm] = useState({new: '', confirm: ''}); // form data set in state
 
+  // used to check if form data matches each other
   function handleEditSubmit(e) {
     e.preventDefault();
     if (editForm.new === editForm.confirm) {
@@ -16,7 +17,7 @@ function Home({user, onUserEdit, onSetProfilePic}) {
       changeEdit('firstname');
       changeShow(false);
     }
-    else {
+    else { // resets form when form data doesn't match
       changeEditForm({new: '', confirm: ''});
       e.target.reset();
       alert('Your new input does not match your confirmed input. Try again.');
@@ -33,6 +34,7 @@ function Home({user, onUserEdit, onSetProfilePic}) {
     changeShow(!showForm);
   }
 
+  // changes form data in state based on what is being typed in
   function handleEditFormChange(e) {
     changeEditForm({...editForm, [e.target.name]: e.target.value});
   }

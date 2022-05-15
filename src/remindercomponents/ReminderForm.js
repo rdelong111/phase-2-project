@@ -4,8 +4,9 @@ function ReminderForm({onFormSubmit}) {
   const [formData, changeData] = useState({
     message: '',
     priority: 3
-  });
+  }); // form data stored in state
 
+  // changes form data based on choice/text typed
   function handleFormChange(e) {
     changeData({
       ...formData,
@@ -13,6 +14,7 @@ function ReminderForm({onFormSubmit}) {
     });
   }
 
+  // calls prop to submit new reminder
   function handleFormSubmit(e) {
     e.preventDefault();
     onFormSubmit(formData);

@@ -7,13 +7,14 @@ function RandomMeme({onSetProfilePic}) {
     subreddit: 'N/A',
     title: 'Stock Image',
     url: 'https://i.stack.imgur.com/34AD2.jpg'
-  });
+  }); // meme data stored in state
 
+  // GETs a new meme and checks if it's appropriate
   function handleNewMeme() {
     fetch('https://meme-api.herokuapp.com/gimme')
       .then((r) => r.json())
       .then((theMeme) => {
-        if (theMeme.nsfw || theMeme.spoiler) return handleNewMeme();
+        if (theMeme.nsfw || theMeme.spoiler) return handleNewMeme(); // function is recalled for appropriate meme
         else {
           changeMeme({
             author: theMeme.author,

@@ -5,11 +5,12 @@ import ReminderForm from './ReminderForm';
 import ReminderSortFilt from './ReminderSortFilt';
 
 function Reminders({isSignedIn}) {
-  const [rmdrs, changeRmdrs] = useState([]);
-  const [form, showForm] = useState(false);
-  const [sort, changeSort] = useState('none');
-  const [search, changeSearch] = useState('');
+  const [rmdrs, changeRmdrs] = useState([]); // list of reminders stored in state
+  const [form, showForm] = useState(false); // used to show new reminder form or not
+  const [sort, changeSort] = useState('none'); // sort selection stored in state
+  const [search, changeSearch] = useState(''); // search box text stored in state
 
+  // creates a list of reminders based on sort selection and search text
   const rList = sortFunction(rmdrs, sort)
     .map((rmdr) => {
       if (rmdr.message.toLowerCase().includes(search.toLowerCase())) {
@@ -20,12 +21,14 @@ function Reminders({isSignedIn}) {
       else return null;
     });
 
+  // GETs list of reminders when page loads
   useEffect(() => {
     fetch('http://localhost:3001/reminders')
       .then((r) => r.json())
       .then((theRs) => changeRmdrs(theRs));
   }, []);
 
+  // POSTs new reminder to db.json and adds reminder to list in state. Then hides form
   function handleFormSubmit(reminder) {
     fetch('http://localhost:3001/reminders', {
       method: 'POST',
@@ -41,6 +44,7 @@ function Reminders({isSignedIn}) {
       });
   }
 
+  // Deletes selected reminder in db.json and does so in state also
   function handleDelete(ID) {
     fetch(`http://localhost:3001/reminders/${ID}`, {
       method: 'DELETE'
@@ -51,6 +55,7 @@ function Reminders({isSignedIn}) {
       })
   }
 
+  // used to sort list of reminders based on selection
   function sortFunction(reminders, sortVal) {
     if (sortVal === 'none') return reminders;
     else if (sortVal === 'alpha') {
